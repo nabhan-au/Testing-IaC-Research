@@ -12,6 +12,8 @@ TgApplyAllE,terraform
 Destroy,terraform
 install,helm
 installE,helm
+Delete,helm
+DeleteE,helm
 KubectlApply,k8s
 KubectlApplyE,k8s
 KubectlApplyFromKustomize,k8s
