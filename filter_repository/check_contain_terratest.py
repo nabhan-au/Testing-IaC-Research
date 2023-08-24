@@ -137,14 +137,20 @@ try:
 except:
     assert False, "INPUT_RANGE must be integer"
 
-repo_urls = read_csv_file(repo_url_file_name)
-repo_urls = [{"repo_url":repo_url["repo_path"]} for repo_url in repo_urls]
-repo_size = len(repo_urls)
-print(repo_urls)
+repo_lst = read_csv_file(repo_url_file_name)
+repo_lst = [{"repo_url":repo_url["repo_path"]} for repo_url in repo_lst]
+repo_size = len(repo_lst)
+print(repo_lst)
 save_repo_information_csv_file_name = check_csv_file_name(save_repo_information_csv_file_name)
 for i in range(input_range[0] - 1, min(input_range[1], repo_size)):
-    repo_url = repo_urls[i]
-    print(repo_url)
-    repo_dict = get_repo_information(repo_url["repo_url"], save_clone_repo_path, delete_repo = delete_repo)
+    repo = repo_lst[i]
+    print(repo)
+    repo_dict = get_repo_information(repo["repo_url"], save_clone_repo_path, delete_repo = delete_repo)
+    repo_dict["total_commits"] = repo["total_commits"]
+    repo_dict["oldest_commit_date"] = repo["oldest_commit_date"]
+    repo_dict["latest_commit_date"] = repo["latest_commit_date"]
+    repo_dict["month_between"] = repo["month_between"]
+    repo_dict["commit_per_month"] = repo["commit_per_month"]
+    repo_dict["repo_age"] = repo["repo_age"]
     save_data_to_csv([repo_dict], save_repo_information_csv_file_name)
     time.sleep(sleep_time)

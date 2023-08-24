@@ -47,7 +47,7 @@ output_file = os.getenv("OUTPUT_FILE")
 git_token = os.getenv("GITHUB_TOKEN")
 
 repo_csv = read_csv_file(input_file)
-repo_name_list = [repo["name"].split(":")[-1] for repo in repo_csv]
+repo_name_list = [repo["name"].split(":")[-1] for repo in repo_csv if repo['commit_per_month'] >= 2]
 
 g = Github(git_token)
 for i in range(len(repo_name_list)):

@@ -1,3 +1,3 @@
-module github.com/nabhan-au/iac-research-ast-go
+module github.com/test/iac-research-ast-go
 
 go 1.20
