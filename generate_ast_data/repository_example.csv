@@ -1,0 +1,4 @@
+repo_name,repo_path,total_commits,oldest_commit_date,latest_commit_date,month_between,commit_per_month,repo_age
+mingfang/terraform-provider-k8s,git@github.com:mingfang/terraform-provider-k8s,591,2018-10-17 11:45:18,2023-06-26 02:40:41,56,10.553571,56
+jckuester/awsweeper,git@github.com:jckuester/awsweeper,193,2017-07-16 12:16:12,2022-01-16 16:31:44,54,3.574074,54
+neuvector/neuvector-helm,git@github.com:neuvector/neuvector-helm,480,2019-01-12 01:49:17,2023-06-26 22:37:20,53,9.056604,57
